@@ -3,6 +3,7 @@ import { useSignInWithGoogle, useSignInWithEmailAndPassword } from 'react-fireba
 import { Link } from 'react-router-dom';
 import {useForm } from 'react-hook-form';
 import auth  from '../../firebase.init'
+import Loding from '../Shared/Loding';
 
 
 const Login = () => {
@@ -18,7 +19,7 @@ const Login = () => {
     
     
     if (loading || gLoading) {
-        // return <Loding></Loding>
+         return <Loding></Loding>
     }
   
 
@@ -27,7 +28,9 @@ const Login = () => {
         loginerrorMessage = <p className='text-red-500' >{error?.message}|| {gError?.message}</p>
     }
     
-    
+    if(gUser||user){
+        console.log(gUser,)
+    }
     
     const onSubmit = data => {
          console.log(data);
@@ -92,18 +95,13 @@ const Login = () => {
                         </label>
                     </div>
 
-                    {/* {errors.firstName?.type === 'required' && "First name is required"}
-  
-  <input {...register("lastName", { required: true })} />
-  {errors.lastName && "Last name is required"} */}
-
-                 <input className='btn w-full max-w-xs' type="submit" value='LOGIN' />
+                 <input className='btn w-full max-w-xs btn-primary' type="submit" value='LOGIN' />
                 </form> 
                 <p> <small>New to Car-parts-meungfectara <Link className='text-primary' to="/sigup">Create New Account</Link>  </small> </p>
                  {loginerrorMessage}
 
                 <div className="divider">OR</div>
-                <button onClick={() => signInWithGoogle()} className="btn btn-outline">  CONTINUE WITH GOOGLE  </button>
+                <button onClick={() => signInWithGoogle()} className="btn btn-outline btn-primary">  CONTINUE WITH GOOGLE  </button>
             </div>
         </div>
 
