@@ -10,10 +10,14 @@ const Navbar = () => {
   }
   
   const menuItems =<>
-         <li><Link to='/home'>Home</Link></li>
-        
+         <li><Link to='/home'>Home</Link></li>  
         <li> <Link  to='/contact'>Blogs</Link></li>
+         <li> <Link to={'/myportfolio'} >My Portfolio</Link>        </li>
         <li> <Link  to='/about'>About</Link></li>
+      {
+        user && <li> <Link  to='/dashboard'>Dashboard</Link></li>
+      }
+      
         <li> {user ?  <button onClick={logout} className='btn btn-ghost '> Signout </button> : <Link  to ='/login'>Login</Link>}</li>
            
    </>

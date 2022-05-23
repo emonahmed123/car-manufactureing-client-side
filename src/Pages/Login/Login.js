@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useSignInWithGoogle, useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth'
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import {useForm } from 'react-hook-form';
@@ -20,6 +20,14 @@ const Login = () => {
     const location =useLocation(); 
     
     let from = location.state?.from?.pathname || "/";
+   
+     useEffect(()=>{
+        if(gUser||user){
+            navigate(from,{replace:true});
+        }
+
+
+     },[user,gUser,from,navigate])
     if (loading || gLoading) {
          return <Loding></Loding>
     }
@@ -30,9 +38,7 @@ const Login = () => {
         loginerrorMessage = <p className='text-red-500' >{error?.message}|| {gError?.message}</p>
     }
     
-    if(gUser||user){
-        navigate(from,{replace:true});
-    }
+
     
     const onSubmit = data => {
          console.log(data);

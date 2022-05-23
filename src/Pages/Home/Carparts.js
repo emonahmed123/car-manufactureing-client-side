@@ -1,18 +1,23 @@
 import React, { useEffect, useState } from 'react';
 import SinglePart from './SinglePart';
-
-
+import { useQuery } from 'react-query';
+import Loding from '../Shared/Loding'
 const CarParts = () => {
    
-    const [parts,setparts]=useState([]);
+    // const [parts,setparts]=useState([]);
+    const{data:parts, isLoading,refetch} =useQuery('part', ()=>fetch('http://localhost:5000/part')
+  .then(res=>res.json( ))
+   )
+    if(isLoading){
+        return <Loding></Loding>
+    }
+    //  useEffect(()=>{
 
-     useEffect(()=>{
+    //     fetch('http://localhost:5000/part')
+    //     .then(res=>res.json())
+    //     .then(data=>setparts(data))
 
-        fetch('http://localhost:5000/part')
-        .then(res=>res.json())
-        .then(data=>setparts(data))
-
-     },[])       
+    //  },[])       
 
     return (
      
