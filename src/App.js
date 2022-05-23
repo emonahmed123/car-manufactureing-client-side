@@ -6,6 +6,7 @@ import Navbar from './Pages/Shared/Navbar';
 import Purchase from './Pages/Purchase/Purchase';
 import Login from  './Pages/Login/Login';
 import Sigup from './Pages/Login/Sigup';
+import RequireAuth from './Pages/Login/RequireAuth';
 
 function App() {
   return (
@@ -14,7 +15,9 @@ function App() {
         <Routes>
         <Route path='/' element={<Home></Home>} ></Route>
         <Route path='/home' element={<Home></Home>}></Route>
-        <Route path='/purchase/:id' element={<Purchase></Purchase>}></Route>
+        <Route path='/purchase/:id' element={<RequireAuth>
+          <Purchase></Purchase>
+        </RequireAuth>}></Route>
         <Route path='/login' element={<Login></Login>}></Route>
         <Route path='/sigup' element={<Sigup></Sigup>}></Route>
 

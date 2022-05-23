@@ -1,7 +1,7 @@
 import React from 'react';
 import { useCreateUserWithEmailAndPassword, useSignInWithGoogle, useUpdateProfile } from 'react-firebase-hooks/auth';
 import { useForm } from 'react-hook-form';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import auth from '../../firebase.init';
 import Loding from '../Shared/Loding';
 
@@ -15,7 +15,7 @@ const Sigup = () => {
         error,
     ] = useCreateUserWithEmailAndPassword(auth ,{sendEmailVerification:true});
     const [updateProfile, updating, updateerror] = useUpdateProfile(auth);
- 
+     const navigate =useNavigate()
     let SingerrorMessage;
     
     if (loading || gLoading || updating) {
@@ -25,7 +25,9 @@ const Sigup = () => {
         SingerrorMessage = <p className='text-red-500'>{error?.message} || {gError?.message}|| {updateerror?.message}</p>
     }
   
-  
+       if(user||gUser){
+           console.log(user||gUser)
+       }
   
 
 
@@ -36,7 +38,7 @@ const Sigup = () => {
         await  createUserWithEmailAndPassword(data.email, data.password)
         await updateProfile({ displayName:data.name});
     
-        // navigate('/appointment')
+        navigate('/home')
     }
   
     return (
@@ -129,7 +131,7 @@ const Sigup = () => {
                     {SingerrorMessage}
 
                     <div className="divider">OR</div>
-                    <button onClick={() => signInWithGoogle()} className="btn btn-outline" >  CONTINUE WITH GOOGLE  </button>
+                    <button onClick={() => signInWithGoogle()} className="btn btn-outline btn-primary" >  CONTINUE WITH GOOGLE  </button>
                   </div>
             </div>
 
