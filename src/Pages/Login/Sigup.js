@@ -4,7 +4,7 @@ import { useForm } from 'react-hook-form';
 import { Link, useNavigate } from 'react-router-dom';
 import auth from '../../firebase.init';
 import Loding from '../Shared/Loding';
-
+import useToken from '../../hooks/useToken';
 const Sigup = () => {
     const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
     const { register, formState: { errors }, handleSubmit } = useForm();
@@ -16,7 +16,8 @@ const Sigup = () => {
     ] = useCreateUserWithEmailAndPassword(auth ,{sendEmailVerification:true});
     const [updateProfile, updating, updateerror] = useUpdateProfile(auth);
      const navigate =useNavigate()
-    let SingerrorMessage;
+     const[token] =useToken(user||gUser)
+     let SingerrorMessage;
     
     if (loading || gLoading || updating) {
         return <Loding></Loding>
@@ -25,9 +26,9 @@ const Sigup = () => {
         SingerrorMessage = <p className='text-red-500'>{error?.message} || {gError?.message}|| {updateerror?.message}</p>
     }
   
-       if(user||gUser){
-           console.log(user||gUser)
-       }
+       if(token){
+           navigate('/home')
+        }
   
 
 
@@ -38,7 +39,6 @@ const Sigup = () => {
         await  createUserWithEmailAndPassword(data.email, data.password)
         await updateProfile({ displayName:data.name});
     
-        navigate('/home')
     }
   
     return (

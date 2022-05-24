@@ -7,7 +7,14 @@ const Myoder = () => {
     const [user] =useAuthState(auth)
     useEffect(()=>{
          if(user){
-            fetch(`http://localhost:5000/booking?user=${user.email}`)
+            fetch(`http://localhost:5000/booking?user=${user.email}`,{
+
+              method: 'GET',
+              headers: {
+                  'authorization': `Bearer ${localStorage.getItem('accessToken')}`
+              }
+
+            })
             .then(res=>res.json())
             .then(data => setOders(data))
          }
