@@ -9,7 +9,7 @@ const Navbar = () => {
     signOut(auth)
     localStorage.removeItem('accessToken')
   }
-  
+  console.log(user)
   const menuItems =<>
          <li><Link to='/home'>Home</Link></li>  
         <li> <Link  to='/contact'>Blogs</Link></li>
@@ -18,8 +18,14 @@ const Navbar = () => {
       {
         user && <li> <Link  to='/dashboard'>Dashboard</Link></li>
       }
-      
+     
         <li> {user ?  <button onClick={logout} className='btn btn-ghost '> Signout </button> : <Link  to ='/login'>Login</Link>}</li>
+        <li> {user &&   <div class="avatar">
+    <div class="w-8 rounded-xl">
+    <img src={user.photoURL} alt='noIamge' />
+  </div>
+</div>  }
+</li>
            
    </>
     return (

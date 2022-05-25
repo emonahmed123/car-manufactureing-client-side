@@ -20,7 +20,7 @@ import Mangeoders from './Pages/DashBoard/Mangeoders';
 import Addapart from './Pages/DashBoard/Addapart';
 import RequireAdmin from './Pages/Login/RequireAdmin';
 import Footer from './Pages/Shared/Footer';
-
+import NotFound from './Pages/Shared/NotFound'
 function App() {
   return (
     <div className="App">
@@ -53,7 +53,7 @@ function App() {
          <Route  path='mangepart' element={<RequireAdmin><MangePart></MangePart></RequireAdmin>}></Route>
          <Route  path='mangeorder' element={<RequireAdmin><Mangeoders></Mangeoders></RequireAdmin>}></Route>
          <Route  path='addpart' element={<Addapart></Addapart>}></Route>
-                     
+                      
          </Route>
       
       
@@ -64,7 +64,7 @@ function App() {
       
         <Route path='/login' element={<Login></Login>}></Route>
         <Route path='/sigup' element={<Sigup></Sigup>}></Route>
-
+        <Route path='*' element={<NotFound></NotFound>} ></Route>
         </Routes>
         <Footer></Footer>
        <ToastContainer/>
