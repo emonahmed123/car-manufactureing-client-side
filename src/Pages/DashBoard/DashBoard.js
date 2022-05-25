@@ -1,7 +1,14 @@
 import React from 'react';
 import { Link, Outlet } from 'react-router-dom';
+import auth from '../../firebase.init';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import  useAdmin from '../../hooks/useAdmin'
 const DashBoard = () => {
-    return (
+  const [user] = useAuthState(auth);
+  
+  const [admin]=useAdmin(user) 
+  
+   return (
         <div class="drawer drawer-mobile">
         <input id="dashboard-sidebar" type="checkbox" class="drawer-toggle" />
         <div class="drawer-content ">
@@ -13,18 +20,27 @@ const DashBoard = () => {
         <div class="drawer-side">
           <label htmlFor="dashboard-sidebar" class="drawer-overlay"></label> 
           <ul class="menu p-4 overflow-y-auto w-48 bg-base-100 text-base-content">
-            {/* <!-- Sidebar content here --> */}
-            <li><Link to='/dashboard'>My Order</Link></li>
-            <li><Link to="/dashboard/profile">My Profile</Link></li>
-            <li><Link to="/dashboard/addRiview">Add a review </Link></li>
-           {/* {admin && <>
-            <li><Link to="/dashboard/user">All Users</Link></li>
-            <li><Link to="/dashboard/adddoctor">Add a doctor</Link></li>
+           {
+             admin? '' : <>
            
-            <li><Link to="/dashboard/mangedoctor">Mange a doctor</Link></li>
+             <li><Link to="/dashboard/addRiview">Add a review </Link></li>
+             <li><Link to="/dashboard/order">My Order</Link></li>
+             </>
+           }
+           
+           <li><Link to='/dashboard'>My Profile</Link></li>
+      
+          
+
+           {admin && <>
+            <li><Link to="/dashboard/alluser">All user</Link></li>
+            <li><Link to="/dashboard/mangepart">Mange Part</Link></li>
+           
+            <li><Link to="/dashboard/mangeorder">Mange Order</Link></li>
+            <li><Link to="/dashboard/addpart">Add part</Link></li>
            
            
-           </>} */}
+           </>} 
           </ul>
         
         </div>

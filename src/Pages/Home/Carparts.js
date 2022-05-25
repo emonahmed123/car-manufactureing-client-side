@@ -10,14 +10,7 @@ const CarParts = () => {
    )
     if(isLoading){
         return <Loding></Loding>
-    }
-    //  useEffect(()=>{
-
-    //     fetch('http://localhost:5000/part')
-    //     .then(res=>res.json())
-    //     .then(data=>setparts(data))
-
-    //  },[])       
+    }     
 
     return (
      

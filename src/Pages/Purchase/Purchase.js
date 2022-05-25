@@ -8,8 +8,9 @@ const Purchase = () => {
   const {id} =useParams()
     const [user] =useAuthState(auth)
   const [part] =useBookperParthook(id);
-    const handlePurchase =(event)=>{       event.preventDefault()
-        const booking={
+    const handlePurchase =(event)=>{     
+      event.preventDefault()
+      const booking={
              partId:part._id,
              Partname:part.name,
              price:part.price,

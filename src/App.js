@@ -14,6 +14,12 @@ import DashBoard from './Pages/DashBoard/DashBoard';
 import Myoder from './Pages/DashBoard/Myoder';
 import Myprofile from './Pages/DashBoard/Myprofile';
 import AddReview from './Pages/DashBoard/AddReview';
+import Alluser from './Pages/DashBoard/Alluser';
+import MangePart from './Pages/DashBoard/MangePart';
+import Mangeoders from './Pages/DashBoard/Mangeoders';
+import Addapart from './Pages/DashBoard/Addapart';
+import RequireAdmin from './Pages/Login/RequireAdmin';
+import Footer from './Pages/Shared/Footer';
 
 function App() {
   return (
@@ -37,9 +43,16 @@ function App() {
 
 
          }>
-         <Route index element={<Myoder></Myoder>}></Route>
-         <Route  path='profile'  element ={<Myprofile></Myprofile>}></Route>
+          <Route index element={<MyPortfolio></MyPortfolio>}></Route> 
+         <Route  path='order'  element ={<Myoder></Myoder>}></Route>
          <Route  path='addRiview' element={<AddReview></AddReview>}></Route>
+         <Route  path='alluser' element={<RequireAdmin>
+          <Alluser></Alluser>
+         </RequireAdmin>}></Route>
+         
+         <Route  path='mangepart' element={<RequireAdmin><MangePart></MangePart></RequireAdmin>}></Route>
+         <Route  path='mangeorder' element={<RequireAdmin><Mangeoders></Mangeoders></RequireAdmin>}></Route>
+         <Route  path='addpart' element={<Addapart></Addapart>}></Route>
                      
          </Route>
       
@@ -53,7 +66,9 @@ function App() {
         <Route path='/sigup' element={<Sigup></Sigup>}></Route>
 
         </Routes>
+        <Footer></Footer>
        <ToastContainer/>
+    
     </div>
   );
 }
