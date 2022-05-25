@@ -23,7 +23,7 @@ const Addapart = () => {
             .then(res=> res.json())
             .then(result=>{console.log(result)
                 if(result.acknowledged){
-                    toast('Booking done')
+                    toast.success('Add parts')
                 }
             })
     

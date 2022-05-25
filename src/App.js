@@ -14,13 +14,13 @@ import Myoder from './Pages/DashBoard/Myoder';
 import Myprofile from './Pages/DashBoard/Myprofile';
 import AddReview from './Pages/DashBoard/AddReview';
 import Alluser from './Pages/DashBoard/Alluser';
-import MangePart from './Pages/DashBoard/MangePart';
 import Mangeoders from './Pages/DashBoard/Mangeoders';
 import Addapart from './Pages/DashBoard/Addapart';
 import RequireAdmin from './Pages/Login/RequireAdmin';
 import Footer from './Pages/Shared/Footer';
 import NotFound from './Pages/Shared/NotFound'
 import Blogs from './Pages/Blogs/Blogs';
+import ManageParts from './Pages/DashBoard/ManageParts';
 function App() {
   return (
     <div className="App">
@@ -50,7 +50,7 @@ function App() {
           <Alluser></Alluser>
          </RequireAdmin>}></Route>
          
-         <Route  path='mangepart' element={<RequireAdmin><MangePart></MangePart></RequireAdmin>}></Route>
+         <Route  path='mangepart' element={<RequireAdmin><ManageParts></ManageParts></RequireAdmin>}></Route>
          <Route  path='mangeorder' element={<RequireAdmin><Mangeoders></Mangeoders></RequireAdmin>}></Route>
          <Route  path='addpart' element={<Addapart></Addapart>}></Route>
                       

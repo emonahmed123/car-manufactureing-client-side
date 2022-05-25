@@ -33,7 +33,7 @@ const DashBoard = () => {
           
 
            {admin && <>
-            <li><Link to="/dashboard/alluser">All user</Link></li>
+            <li><Link to="/dashboard/alluser">Make Admin</Link></li>
             <li><Link to="/dashboard/mangepart">Mange Part</Link></li>
            
             <li><Link to="/dashboard/mangeorder">Mange Order</Link></li>
