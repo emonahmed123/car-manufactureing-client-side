@@ -9,7 +9,7 @@ const Navbar = () => {
     signOut(auth)
     localStorage.removeItem('accessToken')
   }
-  console.log(user)
+  
   const menuItems =<>
          <li><Link to='/home'>Home</Link></li>  
         <li> <Link  to='/contact'>Blogs</Link></li>
@@ -30,7 +30,7 @@ const Navbar = () => {
    </>
     return (
       <>
-<div className="navbar bg-primary">
+<div className="navbar bg-gradient-to-r from-secondary to-primary">
   <div className="navbar-start">
     <div className="dropdown">
       <label tabIndex="0" className="btn btn-ghost lg:hidden">

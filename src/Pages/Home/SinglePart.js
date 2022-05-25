@@ -15,11 +15,11 @@ const SinglePart = ({part}) => {
   return (
          <div> 
           
-<div class="card  lg:max-w-lg bg-base-100 shadow-xl">
-  <figure class="px-10 pt-10">
-    <img  className='w-24 h-24 md:w-48 md:h-auto  md:rounded-none rounded-full mx-auto'src={img}alt="Shoes" class="rounded-xl" />
+<div class="card lg:max-w-lg bg-base-100 shadow-xl">
+  <figure class="px-10 pt-10 h-48">
+    <img  className='md:w-48 md:h-48 md:rounded-none rounded-full mx-auto'src={img}alt="Shoes" class="rounded-xl" />
   </figure>
-  <div class="card-body items-center text-center">
+  <div class="card-body items-center text-center pt-24  ">
     <h2 class="card-title">{name}</h2>
     <p>{description}</p>
     <p>price ${price}</p>
