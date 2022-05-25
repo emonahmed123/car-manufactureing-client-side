@@ -20,12 +20,13 @@ import Addapart from './Pages/DashBoard/Addapart';
 import RequireAdmin from './Pages/Login/RequireAdmin';
 import Footer from './Pages/Shared/Footer';
 import NotFound from './Pages/Shared/NotFound'
+import Blogs from './Pages/Blogs/Blogs';
 function App() {
   return (
     <div className="App">
         <Navbar></Navbar>
         <Routes>
-        <Route path='/' element={<Home></Home>} ></Route>
+        <Route path='/' element={<Home></Home>} > </Route>
         <Route path='/home' element={<Home></Home>}></Route>
         <Route path='/purchase/:id' element={<RequireAuth>
           <Purchase></Purchase>
@@ -42,7 +43,7 @@ function App() {
 
 
          }>
-          <Route index element={<MyPortfolio></MyPortfolio>}></Route> 
+          <Route index element={<Myprofile></Myprofile>}></Route> 
          <Route  path='order'  element ={<Myoder></Myoder>}></Route>
          <Route  path='addRiview' element={<AddReview></AddReview>}></Route>
          <Route  path='alluser' element={<RequireAdmin>
@@ -55,8 +56,8 @@ function App() {
                       
          </Route>
       
-      
-      
+          <Route path='/blogs' element={<Blogs></Blogs>} ></Route>
+          
       
       
       
