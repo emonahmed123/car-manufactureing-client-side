@@ -5,7 +5,7 @@ import Loding from '../Shared/Loding'
 const CarParts = () => {
    
     // const [parts,setparts]=useState([]);
-    const{data:parts, isLoading,refetch} =useQuery('part', ()=>fetch('http://localhost:5000/part')
+    const{data:parts, isLoading,refetch} =useQuery('part', ()=>fetch('https://obscure-sierra-06742.herokuapp.com/part')
   .then(res=>res.json( ))
    )
     if(isLoading){

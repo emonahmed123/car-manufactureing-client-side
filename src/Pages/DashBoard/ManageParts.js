@@ -6,7 +6,7 @@ import DeletinConfromparts from './DeletinConfromparts';
 import MangePartRow from './MangePartRow';
 const ManageParts = () => {
       const [deletingPart,setDeletingPart]=useState(null)
-     const {data:parts, isLoading,refetch} =useQuery('parts',()=>fetch('http://localhost:5000/part').then(res => res.json()));
+     const {data:parts, isLoading,refetch} =useQuery('parts',()=>fetch('https://obscure-sierra-06742.herokuapp.com/part').then(res => res.json()));
 
          if(isLoading){
              return <Loding></Loding>

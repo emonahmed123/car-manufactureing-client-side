@@ -9,7 +9,7 @@ const [admin, setAdmin] =useState(false);
              if(email){
 
 
-                fetch(`http://localhost:5000/admin/${email}`,{
+                fetch(`https://obscure-sierra-06742.herokuapp.com/admin/${email}`,{
                     method:'GET',
                     headers:{
                         'content-type': 'application/json',

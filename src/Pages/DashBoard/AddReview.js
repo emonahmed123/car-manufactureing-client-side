@@ -36,9 +36,6 @@ const AddReview = () => {
                         </div>
                    
                    </form> 
-               
-
-
         </div>
     );
 };

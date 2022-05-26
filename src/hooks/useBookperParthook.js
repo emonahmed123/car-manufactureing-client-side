@@ -5,7 +5,7 @@ const useBookperParthook= id=>{
  const [part,setPart]= useState({})
 
  useEffect(()=>{
-     const url =`http://localhost:5000/part/${id}`
+     const url =`https://obscure-sierra-06742.herokuapp.com/part/${id}`
      fetch(url)
      .then(res=>res.json())
      .then(data=>setPart(data))

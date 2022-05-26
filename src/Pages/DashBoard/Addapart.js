@@ -7,7 +7,7 @@ const Addapart = () => {
     const onSubmit = data => {console.log(data)
     
         
-            const url =`http://localhost:5000/part`
+            const url =`https://obscure-sierra-06742.herokuapp.com/part`
         
             fetch(url,{
           method:'POST',

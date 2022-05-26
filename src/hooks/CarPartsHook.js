@@ -7,7 +7,7 @@ const CarPartsHooks =(partId)=>{
 
  useEffect(()=>{
       
-       fetch('http://localhost:5000/part')
+       fetch('https://obscure-sierra-06742.herokuapp.com/part')
        .then(res=>res.json())
        .then( data=>setparts(data))
 
