@@ -12,7 +12,7 @@ const MangePartRow = ({part,index,setDeletingPart}) => {
             <td>{_id}</td>
            
             <td>
-             <label onClick={()=>setDeletingPart(part)} for="deletemodal" class="btn btn-xs btn-error">Delete</label> 
+             <label onClick={()=>setDeletingPart(part)} for="deletemodal" className="btn btn-xs btn-error">Delete</label> 
              
                 
                 

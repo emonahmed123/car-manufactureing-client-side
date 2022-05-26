@@ -23,7 +23,8 @@ const Purchase = () => {
 
         method:'POST',
         headers:{
-            'content-type':'application/json'
+            'content-type':'application/json',
+            authorization:`Bearer ${localStorage.getItem('accessToken')}`
         },
         body:JSON.stringify(booking)
         })
@@ -41,8 +42,24 @@ const Purchase = () => {
     }
    return (
         <div className='my-11'> 
-                    <h1 className='text-2xl text-primary'> Purchaseing to {part.name}</h1>
-               <form onSubmit={handlePurchase}  className=' grid grid-cols-1 gap-3 justify-items-center mt-10' >
+     <div className="card lg:max-w-lg bg-base-100 shadow-xl mx-auto">
+   <figure class="px-10 pt-10 h-48">
+    <img  className='md:w-48 md:h-48 md:rounded-none rounded-full mx-auto'src={part.img}alt="Shoes" class="rounded-xl" />
+   </figure>
+   <div className="card-body items-center text-center pt-24  ">
+    <h2 className="card-title">{part.name}</h2>
+    <p>{part.description}</p>
+    <p>price ${part.price}</p>
+    <p> minimum order quantity:{part.minimumorderquantity}</p>
+    <p>available quantity:{part.availablequantity}</p>
+  
+    </div>
+  </div>
+     
+            <div>
+              
+           <h1 className='text-2xl text-primary'> Purchaseing to {part.name}</h1>
+         <form onSubmit={handlePurchase}  className=' grid grid-cols-1 gap-3 justify-items-center mt-10' >
        <input type="text"  disabled value={part?.name}className="input input-bordered w-full max-w-xs" />
        <input type="text" name='name' value={user?.displayName ||''} disabled   placeholder="Your Name"className="input input-bordered w-full max-w-xs" />
        <input type="email" name='email' value={user?.email||''}  disabled   placeholder="Email Address"className="input input-bordered w-full max-w-xs" />
@@ -51,12 +68,9 @@ const Purchase = () => {
        <input type="submit"  value="Click to Purchase"className="btn btn-primary w-full max-w-xs" />
       
        </form>
-
-
-
-
         
         </div>
+  </div>
     );
 };
 

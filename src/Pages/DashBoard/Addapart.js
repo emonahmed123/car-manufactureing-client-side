@@ -24,6 +24,7 @@ const Addapart = () => {
             .then(result=>{console.log(result)
                 if(result.acknowledged){
                     toast.success('Add parts')
+                      
                 }
             })
     

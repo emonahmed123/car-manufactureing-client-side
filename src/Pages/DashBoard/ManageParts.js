@@ -17,8 +17,8 @@ const ManageParts = () => {
         <div>
             <h1 className='text-xl text-secondary'>Parts:{parts.length}</h1>
 
-            <div class="overflow-x-auto">
-                <table class="table w-full">
+            <div className="overflow-x-auto">
+                <table className="table w-full">
                     <thead>
                         <tr>
                             <th ></th>
@@ -45,7 +45,7 @@ const ManageParts = () => {
 
         {
             deletingPart && <DeletinConfromparts deletingPart={deletingPart}  setDeletingPart={setDeletingPart}
-            refetch={refetch}
+                    refetch={refetch}
             >
 
             </DeletinConfromparts>
