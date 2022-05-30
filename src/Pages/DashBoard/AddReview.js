@@ -3,7 +3,8 @@ import React, { useState } from 'react';
 const AddReview = () => {
      const [addReviews,setAddReviews] =useState([])
 
-      const handleCliked =event=>{
+      
+     const handleCliked =event=>{
         event.preventDefault()
                 const review =event.target.review.value;
                 
@@ -14,7 +15,7 @@ const AddReview = () => {
     return (
         <div>
             <h1 className='text-xl'>Add review</h1>
-            
+                   <p> add reivew </p>
                   <h1>  {addReviews}  </h1>
 
                <form onSubmit={handleCliked }>
