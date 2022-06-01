@@ -10,16 +10,29 @@ const Purchase = () => {
   const [part] =useBookperParthook(id);
     const handlePurchase =(event)=>{     
       event.preventDefault()
-      const booking={
+          const price =part.price;
+          const orderQuentey= parseInt(event.target.order.value) 
+          const totalPrice =price * orderQuentey;
+                   if(part.availablequantity < orderQuentey){
+                    return toast.error("Sorry!! You can not order more then stock")
+
+                   }
+                   if(orderQuentey < 1){
+                     return toast.error ("Sorry!! minimum order 50")
+                   }
+     
+     
+          const booking={
              partId:part._id,
              Partname:part.name,
-             price:part.price,
+             price:totalPrice,
              user:user.email,
              userName:user.displayName,
              phone:event.target.phone.value,
-             address:event.target.address.value
-        }
-        fetch('http://localhost:5000/booking',{
+             address:event.target.address.value,
+             orderQuentey
+            }
+        fetch('https://obscure-sierra-06742.herokuapp.com/booking',{
 
         method:'POST',
         headers:{
@@ -64,9 +77,12 @@ const Purchase = () => {
        <input type="text" name='name' value={user?.displayName ||''} disabled   placeholder="Your Name"className="input input-bordered w-full max-w-xs" />
        <input type="email" name='email' value={user?.email||''}  disabled   placeholder="Email Address"className="input input-bordered w-full max-w-xs" />
        <input type="text" name='phone' placeholder="Phone Number"className="input input-bordered w-full max-w-xs" />
-       <input type="text" name='address' placeholder="Enter Your Address"className="input input-bordered w-full max-w-xs" />
-       <input type="submit"  value="Click to Purchase"className="btn btn-primary w-full max-w-xs" />
-      
+       <input type="number" name='order' required placeholder="Oder Quantity"className="input input-bordered w-full max-w-xs" />
+       <input type="text"  name='address' placeholder="Enter Your Address"className="input input-bordered w-full max-w-xs" />
+          
+        <input type="submit"  value="Click to Purchase"className="btn btn-primary w-full max-w-xs"/>
+              
+           
        </form>
         
         </div>
