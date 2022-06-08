@@ -44,6 +44,7 @@ const Myoder = () => {
         <th>Name</th>
         <th>Price</th>
         <th>Parts Name</th>
+        <th>Payment</th>
       </tr>
     </thead>
   
@@ -55,6 +56,8 @@ const Myoder = () => {
         <th>{oder.userName}</th>
         <td>{oder.price}</td>
         <td>{oder.Partname}</td>
+        <td>{(oder.price  && !oder.paid) && <Link to={`/dashboard/payment/${oder._id}`} ><button className='btn btn-secondary' >pay</button></Link>}</td>
+        <td>{(oder.price  && oder.paid) && <span className='text-success' > paid </span>} </td>
     
         <td>
           </td>

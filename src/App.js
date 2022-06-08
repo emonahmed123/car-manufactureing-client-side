@@ -21,6 +21,7 @@ import Footer from './Pages/Shared/Footer';
 import NotFound from './Pages/Shared/NotFound'
 import Blogs from './Pages/Blogs/Blogs';
 import ManageParts from './Pages/DashBoard/ManageParts';
+import Payment from './Pages/DashBoard/Payment';
 function App() {
   return (
     <div className="App">
@@ -31,6 +32,7 @@ function App() {
         <Route path='/purchase/:id' element={<RequireAuth>
           <Purchase></Purchase>
         </RequireAuth>}></Route>
+       
 
 
         <Route path='/MyPortfolio' element={<MyPortfolio></MyPortfolio>}></Route>
@@ -46,6 +48,11 @@ function App() {
           <Route index element={<Myprofile></Myprofile>}></Route> 
          <Route  path='order'  element ={<Myoder></Myoder>}></Route>
          <Route  path='addRiview' element={<AddReview></AddReview>}></Route>
+         <Route path='payment/:id' element={<RequireAuth>
+          <Payment></Payment>
+        </RequireAuth>}></Route>
+         
+         
          <Route  path='alluser' element={<RequireAdmin>
           <Alluser></Alluser>
          </RequireAdmin>}></Route>
@@ -54,6 +61,7 @@ function App() {
          <Route  path='mangeorder' element={<RequireAdmin><Mangeoders></Mangeoders></RequireAdmin>}></Route>
          <Route  path='addpart' element={<Addapart></Addapart>}></Route>
                       
+        
          </Route>
       
           <Route path='/blogs' element={<Blogs></Blogs>} ></Route>
