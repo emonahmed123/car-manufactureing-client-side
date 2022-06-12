@@ -7,7 +7,7 @@ import {toast} from 'react-toastify';
 const Purchase = () => {
   const {id} =useParams()
     const [user] =useAuthState(auth)
-  const [part] =useBookperParthook(id);
+    const [part] =useBookperParthook(id);
     const handlePurchase =(event)=>{     
       event.preventDefault()
           const price =part.price;
@@ -15,7 +15,7 @@ const Purchase = () => {
           const totalPrice =price * orderQuentey;
                    if(part.availablequantity < orderQuentey){
                     return toast.error("Sorry!! You can not order more then stock")
-
+     
                    }
                    if(orderQuentey < 1){
                      return toast.error ("Sorry!! minimum order 50")
