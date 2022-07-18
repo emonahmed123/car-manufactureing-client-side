@@ -45,7 +45,8 @@ const Purchase = () => {
         .then(data=>{
           if(data.acknowledged){
               toast('Booking done')
-          }
+            
+            }
           else{
               toast('please try after')
           }

@@ -9,7 +9,7 @@ const Myoder = () => {
     const navigate =useNavigate()
     useEffect(()=>{
          if(user){
-            fetch(`https://obscure-sierra-06742.herokuapp.com/booking?user=${user.email}`,{
+            fetch(`http://localhost:5000/booking?user=${user.email}`,{
 
               method: 'GET',
               headers: {
@@ -56,7 +56,7 @@ const Myoder = () => {
         <th>{oder.userName}</th>
         <td>{oder.price}</td>
         <td>{oder.Partname}</td>
-        <td>{(oder.price  && !oder.paid) && <Link to={`/dashboard/payment/${oder._id}`} ><button className='btn btn-secondary' >pay</button></Link>}</td>
+        <td>{(oder.price  && !oder.paid) && <Link to={`/dashboard/payment/${oder._id}`}><button className='btn btn-secondary'>pay</button></Link>}</td>
         <td>{(oder.price  && oder.paid) && <span className='text-success' > paid </span>} </td>
     
         <td>
