@@ -15,7 +15,7 @@ const CheakOutForm = ({part}) => {
     const {price,name,_id}=part;
 
      useEffect(()=>{
-        fetch(`http://localhost:5000/create-payment-intent`,{
+        fetch(`https://obscure-sierra-06742.herokuapp.com/create-payment-intent`,{
     method:"POST",
     headers: {
       'content-type':'application/json',

@@ -9,7 +9,7 @@ const Myoder = () => {
     const navigate =useNavigate()
     useEffect(()=>{
          if(user){
-            fetch(`http://localhost:5000/booking?user=${user.email}`,{
+            fetch(`https://obscure-sierra-06742.herokuapp.com/booking?user=${user.email}`,{
 
               method: 'GET',
               headers: {
