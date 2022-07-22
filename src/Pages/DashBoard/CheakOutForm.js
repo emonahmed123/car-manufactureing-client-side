@@ -91,7 +91,7 @@ const CheakOutForm = ({part}) => {
         transactionId:paymentIntent.id
       }
       // console.log(paymentIntent.id)
-      fetch(`http://localhost:5000/booking/${_id}`, {
+      fetch(`https://obscure-sierra-06742.herokuapp.com/booking/${_id}`, {
         method:'PATCH',
         headers: {
             'content-type': 'application/json',
