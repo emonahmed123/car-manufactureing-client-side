@@ -6,14 +6,14 @@ const Banner = () => {
 
         
       
-         <div className="hero min-h-screen" style={{
+         <div className="hero h-[500px] " style={{
            background:`url(${banner})`,
-           backgroundSize: 'cover'                    
+           backgroundSize:'cover',
         }}>
   <div className="hero-overlay bg-opacity-60"></div>
   <div className="hero-content text-center text-neutral-content">
     <div className="max-w-md">
-      <h1 className="mb-5 text-5xl font-bold">Our parts</h1>
+      <h1 className="mb-5 text-5xl font-bold">OUR <span className='text-primary'>PARTS</span>  </h1>
       <p className="mb-5">We provide best car parts</p>
         
     </div>

@@ -2,11 +2,11 @@
   
   const BussinesSamary = () => {
       return (
-          <div className='mt-10' >
-      <h1 className='text-3xl text-secondary' > MILLOIN CAR COMPANY TRUST US </h1>       
+          <div className='mt-32 mb-24' >
+      <h1 className='text-3xl font-bold' > MILLOIN CAR COMPANY <span className=' text-secondary'>TRUST US</span> </h1>       
           
           
-        <div className="stats stats-vertical lg:stats-horizontal shadow mt-5">
+        <div className="stats stats-vertical lg:stats-horizontal shadow mt-24">
   
   <div className="stat">
     <div className="stat-figure text-primary">

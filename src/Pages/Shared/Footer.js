@@ -2,7 +2,7 @@ import React from 'react';
 
 const Footer = () => {
     return (
-        <footer className="  bg-secondary  bg-gradient-to-r from-secondary to-primary mt-20  p-10">
+        <footer className="  bg-secondary  bg-gradient-to-r from-secondary to-primary mt-64  p-10">
       <div className='footer'>
       <div>
           <span className="footer-title">Services</span> 

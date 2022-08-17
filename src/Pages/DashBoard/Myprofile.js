@@ -5,47 +5,21 @@ const Myprofile = () => {
     const [user] = useAuthState(auth);
     console.log(user)
     return (
-        <div class="hero min-h-screen ">
-            <div class="hero-content flex-col lg:flex-row-reverse">
-                <div class="text-center   mb-24 mx-14 lg:text-left">
-                    <div class="avatar">
+        <div className='w-4/5'>
+            <div class=" mx-56 mt-24 w-52 lg:w-80 md:w-auto text-left pl-2 pt-2 h-auto border shadow rounded ">
+                <div class="   mb-24  ">
+                    <div class="avatar  flex justify-center mb-4 ">
                         <div class="w-24  rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
-                            <img src={user.photoURL} />
-
-
-                        </div>
+                            <img src={user.photoURL} alt='...' />
+                          </div>
                     </div>
-                  
-                            <button className='btn btn-secondary  btn-xs'>Change Profile Picture</button>
-                           
-                    <p className="ps-11 pt-5"> <span className='text-xl'>Name:{user.displayName}</span></p>
+                 <div className='pt-4'>
+                {/* <input className='btn-sm rounded-lg btn-secondary'type="file">Change Profile</input> */}
+                  <p className="ps-11 pt-5 font-bold text-sm   lg:text-xl"> Name:<span className=''>{user.displayName}</span></p>
+                  <p className="ps-11 text-sm   lg:text-xl font-bold">Email: <span className=''>{user.email}</span></p>
+                  </div> 
                 </div>
-                <div class="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
-                    <div class="card-body">
-                        <form>
-
-                            <div class="form-control">
-                                <label class="label">
-                                    <span class="label-text">Name</span>
-                                </label>
-                                <input type="text" placeholder="Name" class="input input-bordered" />
-                            </div>
-                            <div class="form-control">
-                                <label class="label">
-                                    <span class="label-text">Location</span>
-                                </label>
-                                <input type="text" placeholder="Location" class="input input-bordered" />
-
-                            </div>
-                            <div class="form-control mt-6">
-                                <input type="submit" value="submit" class="input input-bordered btn-secondary" />
-                            </div>
-
-
-
-                        </form>
-                    </div>
-                </div>
+                
             </div>
         </div>
     );

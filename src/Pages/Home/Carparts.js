@@ -14,8 +14,8 @@ const CarParts = () => {
 
     return (
      
-       <div>
-            <h2 className='text-3xl my-10 text-primary'> Our car parts</h2>
+       <div className='w-4/5 mx-auto mt-32'>
+            <h2 className='text-3xl my-10 font-bold'> OUR CAR <span className='text-primary'>PARTS</span> </h2>
         
        
            <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 py-10 '>
