@@ -15,7 +15,7 @@ const CheakOutForm = ({part}) => {
     const {price,name,_id}=part;
 
      useEffect(()=>{
-        fetch(`https://obscure-sierra-06742.herokuapp.com/create-payment-intent`,{
+        fetch(`https://car-manunfuctrue-server.onrender.com/create-payment-intent`,{
     method:"POST",
     headers: {
       'content-type':'application/json',
@@ -91,7 +91,7 @@ const CheakOutForm = ({part}) => {
         transactionId:paymentIntent.id
       }
       // console.log(paymentIntent.id)
-      fetch(`https://obscure-sierra-06742.herokuapp.com/booking/${_id}`, {
+      fetch(`https://car-manunfuctrue-server.onrender.com/booking/${_id}`, {
         method:'PATCH',
         headers: {
             'content-type': 'application/json',

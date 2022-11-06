@@ -32,7 +32,7 @@ const Purchase = () => {
              address:event.target.address.value,
              orderQuentey
             }
-        fetch('https://obscure-sierra-06742.herokuapp.com/booking',{
+        fetch('https://car-manunfuctrue-server.onrender.com/booking',{
 
         method:'POST',
         headers:{

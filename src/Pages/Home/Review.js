@@ -1,30 +1,37 @@
-import React from 'react';
-
+import React from 'react'
+import ReactStars from "react-rating-stars-component";
 const Review = ({review}) => {
-        return (
-            <div className=''>
-                <div className="card  lg:max-w-lg bg-base-100 shadow-xl">
-      <div className="card-body">
-             <h1>Our Rating</h1>
-      <div class="rating">
-  <input type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400" />
-  <input type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400" checked />
-  <input type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400" />
-  <input type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400" />
-  <input type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400" />
-</div>
-           <div className='flex itmes-center'>
- 
-
+  return (
     <div>
-          <h4 className='text-xl'> Name:<small> {review.name}</small> </h4>
-          
-      </div>
-           </div>
-      </div>
-    </div>
-     </div>
-        );
-};
+      
 
-export default Review;
+      <div className=' mt-24 '>
+            <div className="card h-52 lg:max-w-lg bg-base-100 shadow-xl">
+  <div className="card-body">
+    <p>{review.reviewContent.slice(0 ,90)}</p>
+
+       <div className='flex itmes-center'>
+       <div className="avatar">
+  <div className="w-16 rounded-full ring ring-primary ring-offset-base-100 mr-5">
+    <img src={review.img} alt=''/>
+  </div>
+</div>
+<div>
+      <h4 className='text-xl'>{review.name}</h4>
+  
+   <ReactStars
+                    size={34}
+                    value={review.star}
+                    activeColor="#ffd700"
+                
+                  />
+  </div>
+       </div>
+  </div>
+</div>
+ </div>
+    </div>
+  )
+}
+
+export default Review

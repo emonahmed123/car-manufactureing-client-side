@@ -10,7 +10,7 @@ const stripePromise = loadStripe('pk_test_51L19tWBgZuDeK2D0tjjsERvbJbIZ46yVmzFHa
 
 const Payment = () => {
    const {id} =useParams();
-   const url =`https://obscure-sierra-06742.herokuapp.com/booking/${id}`
+   const url =`https://car-manunfuctrue-server.onrender.com/booking/${id}`
       const {data:part,isLoading} =useQuery(['booking',id],()=>fetch(url,{
 
         method: 'GET',

@@ -1,47 +1,28 @@
-import React from 'react';
-import Review from './Review';
+import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+import Review from "../Home/Review";
 
 const Reviews = () => {
-    const reviews =[
-
-        {
-            _id:1,
-            name:'Alif',
-           
-        },
-        {
-            _id:2,
-            name:'Sumon',
-            
-           
+  const [reviews, setReviews] = useState([]);
+  useEffect(() => {
+    fetch("https://car-manunfuctrue-server.onrender.com/review")
+      .then((res) => res.json())
+      .then((data) => setReviews(data));
+  }, []);
+  return (
+    <section className="text-gray-600 body-font py-4">
       
-        },
-        {
-            _id:3,
-            name:'Jahid',
-            
-
-        },
-    ]
-    
-    return (
-        <section className='my-32'>
-            <div className='flex justify-center '>
-                  <div className='text-center'  >
-                      <h4 className='text-3xl  font-bold tex-center'>Cheak Review  <span className='text-primary'>Then Trust Us</span></h4>
-                   
-                  </div>
-                  
-
-            </div>
-            
-            <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3  gap-5 '>
+    <h4 className='text-3xl  font-bold tex-center'>Cheak Review  <span className='text-primary'>Then Trust Us</span></h4>
+  
+   <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mx-2 gap-5'>
 {
                 reviews.map(review =><Review key={review._id}review={review} ></Review>)
 }
-            </div>
-        </section>
-    );
+            </div>     
+             
+     
+    </section>
+  );
 };
 
 export default Reviews;

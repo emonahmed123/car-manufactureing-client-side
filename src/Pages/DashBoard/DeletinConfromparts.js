@@ -5,7 +5,7 @@ const DeletinConfromparts = ({deletingPart, refetch,setDeletingPart}) =>{
      const {name,_id} =deletingPart;
   const handleDelete =()=>{
        
-    fetch(`https://obscure-sierra-06742.herokuapp.com/part/${name}`,{
+    fetch(`https://car-manunfuctrue-server.onrender.com/part/${name}`,{
          method: 'DELETE',
          headers: {
             authorization:`Bearer ${localStorage.getItem('accessToken')}`

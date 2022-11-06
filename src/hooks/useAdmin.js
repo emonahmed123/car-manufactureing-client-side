@@ -9,7 +9,7 @@ const [admin, setAdmin] =useState(false);
              if(email){
 
 
-                fetch(`https://obscure-sierra-06742.herokuapp.com/admin/${email}`,{
+                fetch(`https://car-manunfuctrue-server.onrender.com/admin/${email}`,{
                     method:'GET',
                     headers:{
                         'content-type': 'application/json',

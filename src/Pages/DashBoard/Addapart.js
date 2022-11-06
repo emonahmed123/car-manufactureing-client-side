@@ -7,7 +7,7 @@ const Addapart = () => {
     const onSubmit = data => {console.log(data)
     
         
-            const url =`https://obscure-sierra-06742.herokuapp.com/part`
+            const url =`https://car-manunfuctrue-server.onrender.com/part`
         
             fetch(url,{
           method:'POST',

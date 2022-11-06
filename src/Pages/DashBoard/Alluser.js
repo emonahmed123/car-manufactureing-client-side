@@ -4,7 +4,7 @@ import Loding from '../Shared/Loding';
 import UserRow from './UserRow';
 const Alluser = () => {
 
-    const {data:user,isLoading,refetch } =useQuery('user',()=>fetch('https://obscure-sierra-06742.herokuapp.com/user',{
+    const {data:user,isLoading,refetch } =useQuery('user',()=>fetch('https://car-manunfuctrue-server.onrender.com/user',{
         method:"GET",   
        headers: {
              authorization: `Bearer ${localStorage.getItem('accessToken')}`

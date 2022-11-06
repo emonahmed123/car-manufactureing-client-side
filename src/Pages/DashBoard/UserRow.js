@@ -4,7 +4,7 @@ const UserRow = ({user,index,refetch}) => {
    const{email,role} =user;
    
    const Adminmake = () =>{
-    fetch(`https://obscure-sierra-06742.herokuapp.com/user/admin/${email}`,{
+    fetch(`https://car-manunfuctrue-server.onrender.com/user/admin/${email}`,{
         method:'PUT',
         headers:{
          authorization: `Bearer ${localStorage.getItem('accessToken')}`
